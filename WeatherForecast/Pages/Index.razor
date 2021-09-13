@@ -10,22 +10,23 @@
 }
 else
 {
-    <h2>Latitude: @pos.Latitude, Longitude: @pos.Longitude</h2>
-    <div class="card-group">
+    @*<h2>Latitude: @pos.Latitude, Longitude: @pos.Longitude</h2>*@
+    <div class="rsd-basic-grid">
         @foreach (var item in forecast.Daily.Take(5))
         {
-            <DailyForecast Seconds="@item.Dt"
-                           LowTemp="@item.Temp.Min"
-                           HighTemp="@item.Temp.Max"
-                           Description="@item.Weather[0].Description"
-                           Icon="@item.Weather[0].Icon" />
+            <div class="px-lg-1">
+                <DailyForecast Seconds="@item.Dt"
+                               LowTemp="@item.Temp.Min"
+                               HighTemp="@item.Temp.Max"
+                               Description="@item.Weather[0].Description"
+                               Icon="@item.Weather[0].Icon" />
+            </div>
         }
     </div>
 }
 
-
 @code {
-    string message = "Loading...";
+    string message = "";
     Position pos;
     OpenWeather forecast;
 

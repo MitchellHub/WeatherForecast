@@ -105,9 +105,9 @@ using System.Text;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 27 "D:\Projects\C#\BlazorWasmBook\WeatherForecast\WeatherForecast\Pages\Index.razor"
+#line 28 "D:\Projects\C#\BlazorWasmBook\WeatherForecast\WeatherForecast\Pages\Index.razor"
        
-    string message = "Loading...";
+    string message = "";
     Position pos;
     OpenWeather forecast;
 
