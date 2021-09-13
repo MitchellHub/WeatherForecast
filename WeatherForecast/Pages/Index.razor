@@ -1,0 +1,69 @@
+﻿@page "/"
+@using WeatherForecast.Models
+@using System.Text
+@inject IJSRuntime js
+@inject HttpClient Http
+
+@if (pos == null)
+{
+    <p><em>@message</em></p>
+}
+else
+{
+    <h2>Latitude: @pos.Latitude, Longitude: @pos.Longitude</h2>
+    <div class="card-group">
+        @foreach (var item in forecast.Daily.Take(5))
+        {
+            <DailyForecast Seconds="@item.Dt"
+                           LowTemp="@item.Temp.Min"
+                           HighTemp="@item.Temp.Max"
+                           Description="@item.Weather[0].Description"
+                           Icon="@item.Weather[0].Icon" />
+        }
+    </div>
+}
+
+
+@code {
+    string message = "Loading...";
+    Position pos;
+    OpenWeather forecast;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            await GetPosition();
+            await GetForecast();
+        }
+        catch (Exception e)
+        {
+            message = "Error encountered: " + e.Message;
+        }
+    }
+
+    private async Task GetPosition()
+    {
+        pos = await js.InvokeAsync<Position>("rsdInterop.getPosition");
+    }
+
+    private async Task GetForecast()
+    {
+        string APIKey = "f1806b131373ef76ea0698117ed38999";
+
+        StringBuilder url = new StringBuilder();
+        url.Append("https://api.openweathermap.org");
+        url.Append("/data/2.5/onecall?");
+        url.Append("lat=");
+        url.Append(pos.Latitude);
+        url.Append("&lon=");
+        url.Append(pos.Longitude);
+        url.Append("&exclude=");
+        url.Append("current,minutely,hourly,alerts");
+        url.Append("&units=imperial");
+        url.Append("&appid=");
+        url.Append(APIKey);
+
+        forecast = await Http.GetFromJsonAsync<OpenWeather>(url.ToString());
+    }
+}
