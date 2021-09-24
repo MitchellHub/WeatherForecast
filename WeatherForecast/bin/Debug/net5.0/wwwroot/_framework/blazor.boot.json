@@ -195,11 +195,11 @@
       "mscorlib.dll": "sha256-9AZ7YsJz\/p2gr4E0EQXdHBqwDxoXqtzxhqC6aRsa2K8=",
       "netstandard.dll": "sha256-yOOty6BTX3e57YAEHK5a4nku\/lj0vi7jg\/eQZAjbDQk=",
       "System.Private.CoreLib.dll": "sha256-rraBQp6NevIQiELPVfDFDl5pv9QVJqCiZhB5bkpiZ88=",
-      "WeatherForecast.dll": "sha256-5\/zDooyw3hn41r+7jayJnDyZwlnORX6sv3MgGuOkWEQ="
+      "WeatherForecast.dll": "sha256-ZLHNcAumhvG5ZUyhnyXVR0Bg\/HWrAHyCR8NgbYr1H9Q="
     },
     "lazyAssembly": null,
     "pdb": {
-      "WeatherForecast.pdb": "sha256-KhPC41l9ekSdRR6nXi9i1X6OkxcXMZmWM+V8MnMgTXU="
+      "WeatherForecast.pdb": "sha256-QEhUyGadZfZqQ4QobdTF9D9RQwzX\/GQ83F7m7GC0lzo="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-L2vkcKzmXJtf+J7db5TbDMBckrgqJ5qc0ZzVIdRlm0I=",

@@ -1,6 +1,5 @@
 ﻿@page "/"
 @using WeatherForecast.Models
-@using System.Text
 @inject IJSRuntime js
 @inject HttpClient Http
 
@@ -12,7 +11,7 @@ else
 {
     @*<h2>Latitude: @pos.Latitude, Longitude: @pos.Longitude</h2>*@
     <div class="rsd-basic-grid">
-        @foreach (var item in forecast.Daily.Take(5))
+        @foreach (var item in forecast.Daily.Take(7))
         {
             <div class="px-lg-1">
                 <DailyForecast Seconds="@item.Dt"
@@ -50,7 +49,7 @@ else
 
     private async Task GetForecast()
     {
-        string APIKey = "f1806b131373ef76ea0698117ed38999";
+        string APIKey = "3668b7ae5bcbcc273b46b984580933f4"; // (string)System.IO.File.ReadAllText("openweatherapikey.txt");
 
         StringBuilder url = new StringBuilder();
         url.Append("https://api.openweathermap.org");

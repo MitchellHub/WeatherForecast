@@ -28,55 +28,69 @@ using System.Net.Http.Json;
 #nullable disable
 #nullable restore
 #line 3 "D:\Projects\C#\BlazorWasmBook\WeatherForecast\WeatherForecast\_Imports.razor"
-using Microsoft.AspNetCore.Components.Forms;
+using System.IO;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 4 "D:\Projects\C#\BlazorWasmBook\WeatherForecast\WeatherForecast\_Imports.razor"
-using Microsoft.AspNetCore.Components.Routing;
+using System.Text;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 5 "D:\Projects\C#\BlazorWasmBook\WeatherForecast\WeatherForecast\_Imports.razor"
-using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 6 "D:\Projects\C#\BlazorWasmBook\WeatherForecast\WeatherForecast\_Imports.razor"
-using Microsoft.AspNetCore.Components.Web.Virtualization;
+using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 7 "D:\Projects\C#\BlazorWasmBook\WeatherForecast\WeatherForecast\_Imports.razor"
-using Microsoft.AspNetCore.Components.WebAssembly.Http;
+using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 8 "D:\Projects\C#\BlazorWasmBook\WeatherForecast\WeatherForecast\_Imports.razor"
-using Microsoft.JSInterop;
+using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 9 "D:\Projects\C#\BlazorWasmBook\WeatherForecast\WeatherForecast\_Imports.razor"
-using WeatherForecast;
+using Microsoft.AspNetCore.Components.WebAssembly.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 10 "D:\Projects\C#\BlazorWasmBook\WeatherForecast\WeatherForecast\_Imports.razor"
+using Microsoft.JSInterop;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 11 "D:\Projects\C#\BlazorWasmBook\WeatherForecast\WeatherForecast\_Imports.razor"
+using WeatherForecast;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 12 "D:\Projects\C#\BlazorWasmBook\WeatherForecast\WeatherForecast\_Imports.razor"
 using WeatherForecast.Shared;
 
 #line default
@@ -85,13 +99,6 @@ using WeatherForecast.Shared;
 #nullable restore
 #line 2 "D:\Projects\C#\BlazorWasmBook\WeatherForecast\WeatherForecast\Pages\Index.razor"
 using WeatherForecast.Models;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 3 "D:\Projects\C#\BlazorWasmBook\WeatherForecast\WeatherForecast\Pages\Index.razor"
-using System.Text;
 
 #line default
 #line hidden
@@ -105,7 +112,7 @@ using System.Text;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "D:\Projects\C#\BlazorWasmBook\WeatherForecast\WeatherForecast\Pages\Index.razor"
+#line 27 "D:\Projects\C#\BlazorWasmBook\WeatherForecast\WeatherForecast\Pages\Index.razor"
        
     string message = "";
     Position pos;
@@ -131,7 +138,7 @@ using System.Text;
 
     private async Task GetForecast()
     {
-        string APIKey = "f1806b131373ef76ea0698117ed38999";
+        string APIKey = "3668b7ae5bcbcc273b46b984580933f4"; // (string)System.IO.File.ReadAllText("openweatherapikey.txt");
 
         StringBuilder url = new StringBuilder();
         url.Append("https://api.openweathermap.org");
