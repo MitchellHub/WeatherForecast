@@ -49,7 +49,7 @@ else
 
     private async Task GetForecast()
     {
-        string APIKey = "3668b7ae5bcbcc273b46b984580933f4"; // (string)System.IO.File.ReadAllText("openweatherapikey.txt");
+        string APIKey = (string)System.IO.File.ReadAllText("openweatherapikey.txt");
 
         StringBuilder url = new StringBuilder();
         url.Append("https://api.openweathermap.org");
